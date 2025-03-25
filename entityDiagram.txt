@@ -1,0 +1,26 @@
+users [icon: user, color: blue] {
+  Email string pk
+  Name string
+  Password string
+}
+
+products [icon: users, color: blue] {
+  url string pk
+  name string
+  price float
+}
+
+trackings [icon: home] {
+  email string
+  url string
+}
+
+prices [icon: folder] {
+  url string
+  time datetime
+  price float
+}
+
+products.url <> trackings.url
+users.Email <> trackings.email
+products.url <> prices.url
