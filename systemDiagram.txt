@@ -1,0 +1,31 @@
+Title AI-Powered E-Commerce Procurement Assistant
+JWT [icon: gcp-security] {
+  FASTAPI [icon: fastapi] {
+  Websocket [icon: socket-io]
+  }
+}
+  Database [icon: postgres]
+
+Celery [icon: celery] {
+  Message Broker [icon: redis]
+}
+Beat [icon: clock]
+Prometheus [icon: prometheus]
+Grafana [icon: grafana]
+AsyncPG Database Driver [icon: aws-appsync]
+
+SMTP [icon: gcp-game-servers]
+Graph [icon: brain] {
+  Swarm of Agents [icon: graphql]
+}
+
+
+Prometheus -> FASTAPI: Collect metrics data
+Prometheus -> Grafana: Visualize and monitor system status
+FASTAPI -> Celery: Invoke background jobs
+Graph -> Celery: Invoke jobs based on User Interaction.
+Prometheus -> Celery :Collect Background Job matrics  
+Beat -> Celery : Invoke Perodic tasks
+FASTAPI -> AsyncPG Database Driver
+AsyncPG Database Driver -> Database: Used throughout the system to persist data
+Websocket -> Graph : Real time Communication
