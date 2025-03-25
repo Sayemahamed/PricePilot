@@ -14,6 +14,7 @@ async_engine: AsyncEngine = create_async_engine(
 
 async def init_db() -> None:
     async with async_engine.begin() as conn:
+        from API.db.models import Price, Product, Tracking, User
         await conn.run_sync(SQLModel.metadata.create_all)
 
 
